@@ -35,4 +35,4 @@ FetchContent_MakeAvailable(gflags glog googletest)
 # src
 
 add_executable(main src/main.cc)
-target_link_libraries(main PRIVATE glog::glog)
+target_link_libraries(main PUBLIC glog::glog)
