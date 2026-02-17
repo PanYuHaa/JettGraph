@@ -19,12 +19,20 @@ FetchContent_Declare(
   GIT_SHALLOW ON)
 
 FetchContent_Declare(
+  gflags
+  GIT_REPOSITORY https://github.com/gflags/gflags.git
+  GIT_TAG v2.2.2
+  GIT_SHALLOW ON)
+  
+FetchContent_Declare(
   googletest
   GIT_REPOSITORY https://github.com/google/googletest.git
   GIT_TAG release-1.10.0
   GIT_SHALLOW ON)
 
-FetchContent_MakeAvailable(glog googletest)
+FetchContent_MakeAvailable(gflags glog googletest)
 
 # src
+
 add_executable(main src/main.cc)
+target_link_libraries(main PUBLIC glog::glog)
