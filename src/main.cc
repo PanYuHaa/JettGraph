@@ -1,6 +1,6 @@
 #include "iostream"
-
+#include "glog/logging.h"
 int main(){
-    std::cout << "Hello, World!" << std::endl;
+    LOG(INFO) << "Hello, World!";
     return 0;
 }
