@@ -4,6 +4,10 @@ project(
   JGraph
   VERSION 1.0
   LANGUAGES CXX)
+
+include_directories(src)
+
+# add_compile_options(-DJETT_DEBUG_MODE)
 add_compile_options(-Wall -Wextra)
 add_compile_options(-Wno-unused-parameter -Wno-sign-compare
                     -Wno-unused-function -Wno-implicit-exception-spec-mismatch 
@@ -33,6 +37,5 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(gflags glog googletest)
 
 # src
-
-add_executable(main src/main.cc)
-target_link_libraries(main PUBLIC glog::glog)
+add_subdirectory(src)
+add_subdirectory(test)

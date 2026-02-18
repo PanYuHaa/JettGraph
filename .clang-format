@@ -1,0 +1,30 @@
+BasedOnStyle: Google
+IndentWidth: 2
+ColumnLimit: 80
+
+# 指针 / 引用风格
+PointerAlignment: Left
+DerivePointerAlignment: false
+
+# 换行规则
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: InlineOnly
+
+# 函数参数
+BinPackParameters: false
+BinPackArguments: false
+
+# 命名空间
+NamespaceIndentation: All
+
+# 构造函数初始化列表
+BreakConstructorInitializers: AfterColon
+ConstructorInitializerIndentWidth: 4
+
+# include 顺序（Google 推荐）
+SortIncludes: true
+IncludeBlocks: Regroup
+
+# 注释
+ReflowComments: true
