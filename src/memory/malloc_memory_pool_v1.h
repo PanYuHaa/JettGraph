@@ -6,9 +6,15 @@
 
 class MallocMemoryPoolV1 : public BaseMemoryPool {
  public:
-  explicit MallocMemoryPoolV1();
+  static MallocMemoryPoolV1& Instance() {
+    static MallocMemoryPoolV1 instance;
+    return instance;
+  }
   ~MallocMemoryPoolV1() override;
 
-  void* allocate(size_t size) override;
-  void deallocate(void** ptr) override;
+  void* Allocate(size_t size) override;
+  void Deallocate(void** ptr) override;
+
+ private:
+  MallocMemoryPoolV1();
 };

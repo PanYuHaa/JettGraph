@@ -9,7 +9,7 @@ class BaseMemoryPool {
  public:
   virtual ~BaseMemoryPool() = default;
 
-  virtual void* allocate(size_t size) = 0;
+  virtual void* Allocate(size_t size) = 0;
 
-  virtual void deallocate(void** ptr) = 0;
+  virtual void Deallocate(void** ptr) = 0;
 };

@@ -11,7 +11,7 @@ MallocMemoryPoolV1::MallocMemoryPoolV1() {
 MallocMemoryPoolV1::~MallocMemoryPoolV1() {
 }
 
-void* MallocMemoryPoolV1::allocate(size_t size) {
+void* MallocMemoryPoolV1::Allocate(size_t size) {
 #ifdef JETT_DEBUG_MODE
   LOG(INFO) << "Allocate " << size << " bytes.";
 #endif
@@ -21,7 +21,9 @@ void* MallocMemoryPoolV1::allocate(size_t size) {
   return malloc(size);
 }
 
-void MallocMemoryPoolV1::deallocate(void** ptr) {
+void MallocMemoryPoolV1::Deallocate(void** ptr) {
+  if (ptr == nullptr)
+    return;
   free(*ptr);
   *ptr = nullptr;
 }
