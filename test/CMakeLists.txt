@@ -1,2 +1,5 @@
 add_executable(malloc_memory_pool_v1_test malloc_memory_pool_v1_test.cc)
 target_link_libraries(malloc_memory_pool_v1_test PUBLIC memory gtest)
+
+add_executable(tensor_test tensor_test.cc)
+target_link_libraries(tensor_test PUBLIC memory gtest)
